@@ -1513,16 +1513,16 @@ body.gift-locked{overflow:hidden}
 .el-credit svg{opacity:.85}
 
 /* ── ENVELOPE ──────────────────────────── */
-#envelope-screen{position:fixed;inset:0;z-index:10000;overflow:hidden;cursor:pointer;opacity:0;background:#000000}
-#env-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:2;transform:scale(1.18)}
-#env-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:3;opacity:0;transform:scale(1.18)}
+#envelope-screen{position:fixed;inset:0;z-index:10000;overflow:hidden;cursor:pointer;opacity:0;background:#F4EFE3}
+#env-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:2}
+#env-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:3;opacity:0}
 #env-flash{position:fixed;inset:0;background:#fff;z-index:9999;opacity:0;pointer-events:none}
 .envelope-hint{
   position:absolute;bottom:52px;left:50%;transform:translateX(-50%);
   font-family:'Playfair Display',serif;font-size:clamp(11px,3vw,13px);
   letter-spacing:clamp(4px,1.2vw,6px);text-transform:uppercase;
-  color:rgba(212,175,55,.8);opacity:0;cursor:pointer;white-space:nowrap;z-index:10;
-  text-shadow:0 1px 6px rgba(0,0,0,.5);
+  color:#1E3A8A;font-weight:600;opacity:0;cursor:pointer;white-space:nowrap;z-index:10;
+  text-shadow:0 0 10px rgba(255,255,255,.9),0 0 3px rgba(255,255,255,.8);
 }
 .envelope-hint::after{content:'';display:block;width:32px;height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.5),transparent);margin:10px auto 0;animation:hintPulse 2.2s ease-in-out infinite}
 @keyframes hintPulse{0%,100%{opacity:.4;width:32px}50%{opacity:1;width:54px}}
@@ -2242,7 +2242,7 @@ section#sobres{
 <!-- ENVELOPE SCREEN -->
 <div id="envelope-screen" role="button" aria-label="Toca para abrir tu invitación">
   <img id="env-image" src="sobre.jpg" alt="Sobre de la invitación de Nubia Brisia y Luis Ricardo" />
-  <video id="env-video" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/audio/boda-metzli-y-rodolfo/sobre-apertura.mp4" playsinline webkit-playsinline muted preload="auto"></video>
+  <video id="env-video" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/boda-nubia-brisia-luis-ricardo/video/sobre-apertura.mp4" playsinline webkit-playsinline muted preload="auto"></video>
   <p class="envelope-hint" id="env-hint">Toca para abrir</p>
 </div>
 <div id="env-flash"></div>
