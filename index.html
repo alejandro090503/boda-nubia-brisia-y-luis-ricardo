@@ -2275,8 +2275,6 @@ section#sobres{
 .sec-light .orn-line{background:linear-gradient(90deg,transparent,#B8901E,transparent)!important}
 .sec-light .orn-diamond,.sec-light .orn-diamond-sm{border-color:#B8901E!important;background:transparent}
 .sec-light .gline{background:linear-gradient(90deg,transparent,#B8901E,transparent)!important}
-.sec-light .ink-bg i{filter:grayscale(1) invert(1) sepia(.55) saturate(1.3) brightness(1.02);mix-blend-mode:multiply}
-.sec-light .ink-bg{opacity:.5}
 
 /* cuenta regresiva en champán */
 #countdown.sec-light{--cd-olive:#4A7BB7;--cd-gold:#A8811C;--cd-accent:#13224A;--cd-terra:#1E3A8A;border:none}
@@ -2366,6 +2364,48 @@ section#sobres{
 .hz-gem.l{left:0;transform:translate(-50%,-50%)}.hz-gem.r{right:0;transform:translate(50%,-50%);animation-delay:-2s}
 @keyframes hzGem{0%,100%{opacity:.55;scale:.85}50%{opacity:1;scale:1.15}}
 @media(prefers-reduced-motion:reduce){.hz-arch,.hz-side::before,.hz-side::after,.hz-gem{animation:none}}
+
+/* ═══ BRUMA VIVA + TINTAS TRICOLOR ═══ */
+.ink-bg{background:none!important}
+.ink-bg i{background-color:transparent!important}
+.sec-light .ink-bg{opacity:.85}
+.sec-light .ink-bg.soft{opacity:.6}
+#hero .hz-ink{opacity:.42;z-index:-1!important}
+.fx-mesh{position:absolute;inset:0;z-index:-3;overflow:hidden;pointer-events:none}
+.fx-mesh .orb{position:absolute;border-radius:50%;
+  width:calc(var(--k) * clamp(300px,118vw,760px));height:calc(var(--k) * clamp(300px,118vw,760px));
+  left:var(--x);top:var(--y);transform-origin:center;translate:-50% -50%;
+  background:radial-gradient(circle,var(--c) 0%,var(--c2) 34%,transparent 70%);
+  animation:orbDrift var(--d) ease-in-out infinite alternate;animation-delay:var(--dl,0s);will-change:transform}
+.fx-mesh .orb:nth-child(even){animation-name:orbDrift2}
+@keyframes orbDrift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(14%,-10%) scale(1.18)}100%{transform:translate(-12%,12%) scale(.9)}}
+@keyframes orbDrift2{0%{transform:translate(0,0) scale(1.08)}50%{transform:translate(-14%,9%) scale(.9)}100%{transform:translate(10%,-13%) scale(1.16)}}
+.fx-mesh::after{content:'';position:absolute;top:0;bottom:0;left:-70%;width:70%;
+  background:linear-gradient(100deg,transparent,var(--silk) 50%,transparent);animation:meshSheen 15s ease-in-out infinite}
+@keyframes meshSheen{0%{transform:translateX(0) skewX(-14deg)}100%{transform:translateX(260%) skewX(-14deg)}}
+/* azul noche: oro, champán, azul acero y sombra profunda */
+.fx-d{--silk:rgba(247,231,206,.07)}
+.fx-d .orb:nth-child(1){--k:.95;--x:16%;--y:20%;--c:rgba(212,175,55,.34);--c2:rgba(212,175,55,.12);--d:15s}
+.fx-d .orb:nth-child(2){--k:.85;--x:88%;--y:64%;--c:rgba(247,231,206,.22);--c2:rgba(247,231,206,.08);--d:19s;--dl:-5s}
+.fx-d .orb:nth-child(3){--k:1;--x:70%;--y:12%;--c:rgba(74,123,183,.40);--c2:rgba(74,123,183,.14);--d:17s;--dl:-3s}
+.fx-d .orb:nth-child(4){--k:.9;--x:22%;--y:88%;--c:rgba(3,7,20,.50);--c2:rgba(3,7,20,.18);--d:21s;--dl:-8s}
+.fx-d.v2 .orb:nth-child(1){--x:84%;--y:26%}.fx-d.v2 .orb:nth-child(2){--x:14%;--y:60%}.fx-d.v2 .orb:nth-child(3){--x:30%;--y:8%}.fx-d.v2 .orb:nth-child(4){--x:80%;--y:92%}
+/* champán: luz blanca, oro, azul polvo y sombra arena */
+.fx-l{--silk:rgba(255,255,255,.35)}
+.fx-l .orb:nth-child(1){--k:1;--x:20%;--y:18%;--c:rgba(255,251,240,.85);--c2:rgba(255,251,240,.3);--d:16s}
+.fx-l .orb:nth-child(2){--k:.9;--x:86%;--y:42%;--c:rgba(212,175,55,.34);--c2:rgba(212,175,55,.12);--d:19s;--dl:-4s}
+.fx-l .orb:nth-child(3){--k:.85;--x:12%;--y:78%;--c:rgba(74,123,183,.24);--c2:rgba(74,123,183,.08);--d:17s;--dl:-7s}
+.fx-l .orb:nth-child(4){--k:.8;--x:78%;--y:94%;--c:rgba(168,129,28,.22);--c2:rgba(168,129,28,.08);--d:22s;--dl:-2s}
+.fx-l.v2 .orb:nth-child(1){--x:80%;--y:14%}.fx-l.v2 .orb:nth-child(2){--x:16%;--y:46%}.fx-l.v2 .orb:nth-child(3){--x:88%;--y:76%}.fx-l.v2 .orb:nth-child(4){--x:24%;--y:96%}
+@media(prefers-reduced-motion:reduce){.fx-mesh .orb,.fx-mesh::after{animation:none}}
+
+#main-content > section:not(.sec-light) > .ink-bg{opacity:.6}
+#main-content > section:not(.sec-light) > .ink-bg.soft{opacity:.45}
+#footer > .ink-bg{opacity:.38!important}
+
+.fx-mesh{-webkit-mask-image:linear-gradient(transparent 0,#000 140px,#000 calc(100% - 140px),transparent);mask-image:linear-gradient(transparent 0,#000 140px,#000 calc(100% - 140px),transparent)}
+#main-content > section:not(.sec-light) .heading,#main-content > section:not(.sec-light) .heading-sm,#main-content > section:not(.sec-light) .ttl{filter:drop-shadow(0 2px 6px rgba(6,12,32,.85)) drop-shadow(0 0 18px rgba(6,12,32,.6))}
+#main-content > section:not(.sec-light) .eyebrow,#main-content > section:not(.sec-light) .lbl{text-shadow:0 1px 8px rgba(6,12,32,.9)}
   </style>
 </head>
 <body>
@@ -2423,6 +2463,7 @@ section#sobres{
 
 <!-- 1. HERO -->
 <section id="hero" class="hz" data-top="#F7E7CE" data-bot="#F3E3C7">
+  <div class="ink-bg soft hz-ink" aria-hidden="true"><i style="background-image:url('ink/tri-light-hero.webp')"></i></div>
   <div class="hz-bg" aria-hidden="true"><i class="hz-glow g1"></i><i class="hz-glow g2"></i><i class="hz-glow g3"></i></div>
   <div class="h-particles" id="hPart"></div>
   <div class="hz-side" aria-hidden="true">
@@ -2442,7 +2483,7 @@ section#sobres{
 
 <!-- 1b. CON LA GRACIA DE DIOS -->
 <section id="invite" style="text-align:center" class="has-ink">
-  <div class="ink-bg" aria-hidden="true"><i style="background-image:url('ink/ink-top.webp')"></i></div>
+  <div class="ink-bg" aria-hidden="true"><i style="background-image:url('ink/tri-dark-top.webp')"></i></div>
   <span class="eyebrow rvc">Con la gracia de Dios</span>
   <div class="orn rvc"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
   <h2 class="heading rvc foil-text">Nubia Brisia &amp; Luis Ricardo</h2>
@@ -2464,6 +2505,7 @@ section#sobres{
 
 <!-- 2. CUENTA REGRESIVA -->
 <section id="countdown" class="sec-light" data-top="#F7E7CE" data-bot="#F3E3C7">
+  <div class="ink-bg flip" aria-hidden="true"><i style="background-image:url('ink/tri-light-corner.webp')"></i></div>
   <div class="cd-wave-top" aria-hidden="true">
     <svg viewBox="0 0 800 50" preserveAspectRatio="none">
       <path d="M0,25 Q100,5 200,25 T400,25 T600,25 T800,25" fill="none" stroke="rgba(74,123,183,.26)" stroke-width="1"/>
@@ -2540,7 +2582,7 @@ section#sobres{
 
 <!-- 3. UBICACIONES -->
 <section id="location" class="has-ink">
-  <div class="ink-bg oval" aria-hidden="true"><i style="background-image:url('ink/ink-corner.webp')"></i></div>
+  <div class="ink-bg oval" aria-hidden="true"><i style="background-image:url('ink/tri-dark-corner.webp')"></i></div>
   <span class="lbl">¿Dónde y cuándo?</span>
   <h2 class="ttl">La Celebración</h2>
   <div class="gline"></div>
@@ -2574,6 +2616,7 @@ section#sobres{
 
 <!-- 4. CALENDAR -->
 <section id="calendar" class="sec-light" data-top="#F7E7CE" data-bot="#F3E3C7">
+  <div class="ink-bg " aria-hidden="true"><i style="background-image:url('ink/tri-light-top.webp')"></i></div>
   <span class="lbl">No lo olvides</span>
   <h2 class="ttl">Guarda la Fecha</h2>
   <div class="gline"></div>
@@ -2591,7 +2634,7 @@ section#sobres{
 
 <!-- 5. ITINERARIO -->
 <section id="itinerary" class="has-ink">
-  <div class="ink-bg flip" aria-hidden="true"><i style="background-image:url('ink/ink-top.webp')"></i></div>
+  <div class="ink-bg flip" aria-hidden="true"><i style="background-image:url('ink/tri-dark-top.webp')"></i></div>
   <span class="lbl">El Gran Día</span>
   <h2 class="ttl">Itinerario</h2>
   <div class="gline"></div>
@@ -2699,7 +2742,7 @@ section#sobres{
 <!-- 7. MESA DE REGALOS -->
 <!-- ── LLUVIA DE SOBRES (diseño boda-jeffersson-y-vanessa) · repintado azul noche / champán / oro ── -->
 <section id="sobres" aria-label="Lluvia de sobres" class="has-ink">
-  <div class="ink-bg soft flip" aria-hidden="true"><i style="background-image:url('ink/ink-hero.webp')"></i></div>
+  <div class="ink-bg soft flip" aria-hidden="true"><i style="background-image:url('ink/tri-dark-hero.webp')"></i></div>
   <div class="sbx-rain" id="sbxRain" aria-hidden="true"></div>
   <div class="sbx-stage">
     <span class="lbl">Celebra con nosotros</span>
@@ -2763,7 +2806,7 @@ section#sobres{
 
 <!-- 8. ÁLBUM COMPARTIDO -->
 <section id="album" class="sec-light has-ink" data-top="#F7E7CE" data-bot="#F3E3C7">
-  <div class="ink-bg oval" aria-hidden="true"><i style="background-image:url('ink/ink-oval.webp')"></i></div>
+  <div class="ink-bg oval" aria-hidden="true"><i style="background-image:url('ink/tri-light-oval.webp')"></i></div>
   <span class="lbl">Captura cada momento</span>
   <h2 class="ttl">Álbum de fotos</h2>
   <div class="gline"></div>
@@ -2799,7 +2842,7 @@ section#sobres{
 <!-- ── CÓDIGO DE VESTIMENTA (diseño boda-fabiola-y-fernando + figuras de boda-montserrat-y-cecilia,
      swap de colores de boda-shuroaid-y-daniela) · repintado azul noche / champán / oro ── -->
 <section id="dresscode" aria-label="Código de vestimenta" class="has-ink">
-  <div class="ink-bg oval flip" aria-hidden="true"><i style="background-image:url('ink/ink-oval.webp')"></i></div>
+  <div class="ink-bg oval flip" aria-hidden="true"><i style="background-image:url('ink/tri-dark-oval.webp')"></i></div>
   <span class="lbl">Código de vestimenta</span>
   <h2 class="ttl">Formal</h2>
   <div class="gline"></div>
@@ -2867,7 +2910,7 @@ section#sobres{
 
 <!-- 10. FAMILIA -->
 <section id="family" style="text-align:center" class="sec-light has-ink" data-top="#F7E7CE" data-bot="#F3E3C7">
-  <div class="ink-bg soft" aria-hidden="true"><i style="background-image:url('ink/ink-hero.webp')"></i></div>
+  <div class="ink-bg soft" aria-hidden="true"><i style="background-image:url('ink/tri-light-hero.webp')"></i></div>
   <span class="eyebrow">Con la bendición de</span>
   <h2 class="heading-sm foil-text">Nuestras Familias</h2>
   <div class="fam-rings">
@@ -2899,6 +2942,7 @@ section#sobres{
 
 <!-- PADRINOS -->
 <section id="padrinos" class="sec-light" data-top="#F7E7CE" data-bot="#F3E3C7">
+  <div class="ink-bg soft flip" aria-hidden="true"><i style="background-image:url('ink/tri-light-hero.webp')"></i></div>
   <span class="lbl">Nuestros</span>
   <h2 class="ttl">Padrinos</h2>
   <div class="gline"></div>
@@ -2958,6 +3002,7 @@ section#sobres{
 
 <!-- 4b. CLIMA -->
 <section id="weather" class="sec-light" data-top="#F7E7CE" data-bot="#F3E3C7">
+  <div class="ink-bg oval" aria-hidden="true"><i style="background-image:url('ink/tri-light-oval.webp')"></i></div>
   <span class="lbl">Toma tus precauciones</span>
   <h2 class="ttl">El Clima esa Semana</h2>
   <div class="gline"></div>
@@ -3044,7 +3089,7 @@ section#sobres{
 <!-- 12. RSVP -->
 <!-- 12. RSVP · X pases (panel-invitados) -->
 <section id="rsvp" aria-label="Confirmación de asistencia" class="has-ink">
-  <div class="ink-bg soft" aria-hidden="true"><i style="background-image:url('ink/ink-footer.webp')"></i></div>
+  <div class="ink-bg soft" aria-hidden="true"><i style="background-image:url('ink/tri-dark-footer.webp')"></i></div>
   <span class="lbl">Confirmación</span>
   <h2 class="ttl">¿Nos acompañas?</h2>
   <div class="gline"></div>
@@ -3130,6 +3175,7 @@ section#sobres{
 
 <!-- 13. FOOTER -->
 <footer id="footer" class="sec-light ft2" data-top="#F7E7CE" data-bot="#F3E3C7">
+  <div class="ink-bg soft" aria-hidden="true"><i style="background-image:url('ink/tri-light-footer.webp')"></i></div>
   <div class="ft2-halo" aria-hidden="true"></div>
   <img class="ft2-seal" src="sello.webp" alt="Sello B&amp;R" width="220" height="220" loading="eager">
   <p class="ft2-eyebrow">Con amor</p>
@@ -5135,6 +5181,32 @@ function toast(msg) {
       L[nx].style.background = cols[i][0]; L[nx].classList.add('on'); L[front].classList.remove('on'); front = nx;
       nm.classList.add('out'); setTimeout(function(){ nm.textContent = cols[i][1]; nm.classList.remove('out'); }, 700);
     }, 2800);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', go); else go();
+})();
+</script>
+<script>
+/* bruma viva: 4 esferas por sección, paleta según el tono; se pausa fuera de pantalla */
+(function(){
+  function go(){
+    var secs = document.querySelectorAll('#main-content > section, #main-content > footer');
+    var nd = 0, nl = 0;
+    secs.forEach(function(sec){
+      if (sec.querySelector(':scope > .fx-mesh')) return;
+      var light = sec.classList.contains('sec-light');
+      var k = light ? nl++ : nd++;
+      var m = document.createElement('div');
+      m.className = 'fx-mesh ' + (light ? 'fx-l' : 'fx-d') + (k % 2 ? ' v2' : '');
+      m.setAttribute('aria-hidden', 'true');
+      m.innerHTML = '<i class="orb"></i><i class="orb"></i><i class="orb"></i><i class="orb"></i>';
+      sec.insertBefore(m, sec.firstChild);
+    });
+    if ('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(es){ es.forEach(function(e){
+        e.target.querySelectorAll('.orb').forEach(function(o){ o.style.animationPlayState = e.isIntersecting ? 'running' : 'paused'; });
+      }); }, { rootMargin: '200px 0px' });
+      document.querySelectorAll('.fx-mesh').forEach(function(m){ io.observe(m); });
+    }
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', go); else go();
 })();
