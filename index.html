@@ -2259,9 +2259,7 @@ section#sobres{
 @keyframes hzSheen{0%,100%{background-position:120% 0}50%{background-position:-20% 0}}
 #hero .hz-cnt{position:relative;z-index:2;margin-top:30px;padding:0;text-align:center}
 #hero .hz-name{font-size:clamp(46px,13vw,60px);filter:none;text-shadow:none;
-  background:linear-gradient(100deg,#0A1430 0%,#1E3A8A 30%,#4A7BB7 48%,#1E3A8A 66%,#0A1430 100%);background-size:240% 100%;
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
-  animation:goldSweep 8s ease-in-out infinite;padding:.2em .45em;margin:-.2em -.45em}
+  color:#1E3A8A;-webkit-text-fill-color:#1E3A8A;background:none;animation:none;padding:.2em .45em;margin:-.2em -.45em}
 #hero .hz-amp{font-size:clamp(32px,9vw,42px);filter:none;color:#B8901E;-webkit-text-fill-color:#B8901E;margin:-4px 0}
 #hero .h-particles .h-star{filter:hue-rotate(0) brightness(.8)}
 @media(prefers-reduced-motion:reduce){.hz-glow,.hz-photo i,.hz-sheen,#hero .hz-name{animation:none}}
@@ -2406,6 +2404,12 @@ section#sobres{
 .fx-mesh{-webkit-mask-image:linear-gradient(transparent 0,#000 140px,#000 calc(100% - 140px),transparent);mask-image:linear-gradient(transparent 0,#000 140px,#000 calc(100% - 140px),transparent)}
 #main-content > section:not(.sec-light) .heading,#main-content > section:not(.sec-light) .heading-sm,#main-content > section:not(.sec-light) .ttl{filter:drop-shadow(0 2px 6px rgba(6,12,32,.85)) drop-shadow(0 0 18px rgba(6,12,32,.6))}
 #main-content > section:not(.sec-light) .eyebrow,#main-content > section:not(.sec-light) .lbl{text-shadow:0 1px 8px rgba(6,12,32,.9)}
+
+/* azul: degradado vivo sin assets */
+#main-content > section:not(.sec-light){background:linear-gradient(160deg,#0A1430 0%,#13224A 28%,#1E3A8A 52%,#152B63 74%,#0A1430 100%)!important;
+  background-size:100% 260%!important;animation:navyFlow 18s ease-in-out infinite alternate}
+@keyframes navyFlow{0%{background-position:50% 0%}100%{background-position:50% 100%}}
+@media(prefers-reduced-motion:reduce){#main-content > section:not(.sec-light){animation:none}}
   </style>
 </head>
 <body>
@@ -2483,7 +2487,6 @@ section#sobres{
 
 <!-- 1b. CON LA GRACIA DE DIOS -->
 <section id="invite" style="text-align:center" class="has-ink">
-  <div class="ink-bg" aria-hidden="true"><i style="background-image:url('ink/tri-dark-top.webp')"></i></div>
   <span class="eyebrow rvc">Con la gracia de Dios</span>
   <div class="orn rvc"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
   <h2 class="heading rvc foil-text">Nubia Brisia &amp; Luis Ricardo</h2>
@@ -2582,7 +2585,6 @@ section#sobres{
 
 <!-- 3. UBICACIONES -->
 <section id="location" class="has-ink">
-  <div class="ink-bg oval" aria-hidden="true"><i style="background-image:url('ink/tri-dark-corner.webp')"></i></div>
   <span class="lbl">¿Dónde y cuándo?</span>
   <h2 class="ttl">La Celebración</h2>
   <div class="gline"></div>
@@ -2634,7 +2636,6 @@ section#sobres{
 
 <!-- 5. ITINERARIO -->
 <section id="itinerary" class="has-ink">
-  <div class="ink-bg flip" aria-hidden="true"><i style="background-image:url('ink/tri-dark-top.webp')"></i></div>
   <span class="lbl">El Gran Día</span>
   <h2 class="ttl">Itinerario</h2>
   <div class="gline"></div>
@@ -2742,7 +2743,6 @@ section#sobres{
 <!-- 7. MESA DE REGALOS -->
 <!-- ── LLUVIA DE SOBRES (diseño boda-jeffersson-y-vanessa) · repintado azul noche / champán / oro ── -->
 <section id="sobres" aria-label="Lluvia de sobres" class="has-ink">
-  <div class="ink-bg soft flip" aria-hidden="true"><i style="background-image:url('ink/tri-dark-hero.webp')"></i></div>
   <div class="sbx-rain" id="sbxRain" aria-hidden="true"></div>
   <div class="sbx-stage">
     <span class="lbl">Celebra con nosotros</span>
@@ -2842,7 +2842,6 @@ section#sobres{
 <!-- ── CÓDIGO DE VESTIMENTA (diseño boda-fabiola-y-fernando + figuras de boda-montserrat-y-cecilia,
      swap de colores de boda-shuroaid-y-daniela) · repintado azul noche / champán / oro ── -->
 <section id="dresscode" aria-label="Código de vestimenta" class="has-ink">
-  <div class="ink-bg oval flip" aria-hidden="true"><i style="background-image:url('ink/tri-dark-oval.webp')"></i></div>
   <span class="lbl">Código de vestimenta</span>
   <h2 class="ttl">Formal</h2>
   <div class="gline"></div>
@@ -3089,7 +3088,6 @@ section#sobres{
 <!-- 12. RSVP -->
 <!-- 12. RSVP · X pases (panel-invitados) -->
 <section id="rsvp" aria-label="Confirmación de asistencia" class="has-ink">
-  <div class="ink-bg soft" aria-hidden="true"><i style="background-image:url('ink/tri-dark-footer.webp')"></i></div>
   <span class="lbl">Confirmación</span>
   <h2 class="ttl">¿Nos acompañas?</h2>
   <div class="gline"></div>
@@ -3526,8 +3524,8 @@ section#sobres{
     var hasGsap = typeof window.gsap !== 'undefined';
     var RM = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    var AUTO = 0.3;          // tarjetas/seg de base (≈5 s por foto con el "respiro")
-    var DWELL = 0.75;        // 0 = lineal; cerca de 1 = casi se detiene en cada foto
+    var AUTO = 0.42;          // tarjetas/seg de base (≈5 s por foto con el "respiro")
+    var DWELL = 0.45;        // 0 = lineal; cerca de 1 = casi se detiene en cada foto
     var pos = 0, vel = 0, autoDir = 1;
     var spread = 120, depth = 150;
     var dragging = false, pid = null, sx = 0, sy = 0, sPos = 0, moved = false, captured = false;
@@ -3652,6 +3650,9 @@ section#sobres{
     }
     stage.addEventListener('pointerup', function(e){ endDrag(e, false); });
     stage.addEventListener('pointercancel', function(e){ endDrag(e, true); });
+    window.addEventListener('pointerup', function(e){ endDrag(e, false); });
+    window.addEventListener('pointercancel', function(e){ endDrag(e, true); });
+    setInterval(function(){ if(onScreen && !lbOpen && !pageHidden && !running) start(); }, 1500);
     stage.addEventListener('dragstart', function(e){ e.preventDefault(); });
 
     /* ── visor ── */
@@ -4267,8 +4268,8 @@ function heroAnim() {
     scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: true }
   });
   if (!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) {
-    gsap.fromTo('#hCnt', { y: 0, opacity: 1, filter: 'blur(0px)' }, {
-      y: -110, opacity: 0, filter: 'blur(10px)', ease: 'none', immediateRender: false,
+    gsap.fromTo('#hCnt', { y: 0, opacity: 1 }, {
+      y: -110, opacity: 0, ease: 'none', immediateRender: false,
       scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: true }
     });
   }
