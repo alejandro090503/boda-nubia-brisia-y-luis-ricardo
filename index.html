@@ -2410,6 +2410,9 @@ section#sobres{
   background-size:100% 260%!important;animation:navyFlow 18s ease-in-out infinite alternate}
 @keyframes navyFlow{0%{background-position:50% 0%}100%{background-position:50% 100%}}
 @media(prefers-reduced-motion:reduce){#main-content > section:not(.sec-light){animation:none}}
+
+/* clima: la tinta ovalada envuelve todo el bloque */
+#weather > .ink-bg.oval i{background-size:100% 100%;inset:-3% -14%}
   </style>
 </head>
 <body>
@@ -3966,7 +3969,6 @@ section#sobres{
       /* Link desconocido: no hay invitación que actualizar. Se avisa antes
          de que llene un formulario que nunca podría enviarse. */
       btnYes.disabled = true; btnNo.disabled = true; btnConf.disabled = true;
-      say('Para confirmar necesitas abrir el enlace personalizado que te enviamos por WhatsApp. Ese enlace lleva tu nombre y tus pases; si lo abres desde un reenvío o escribiendo la dirección a mano, no podemos identificar tu invitación.', true);
       applyFreeze();
     }
 
