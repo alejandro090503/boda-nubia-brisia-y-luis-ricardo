@@ -2413,6 +2413,13 @@ section#sobres{
 
 /* clima: la tinta ovalada envuelve todo el bloque */
 #weather > .ink-bg.oval i{background-size:100% 100%;inset:-3% -14%}
+
+/* portada: selfie de los novios, marco con arco suave para no cortar las cabezas */
+.hz-arch{width:min(86vw,400px);aspect-ratio:992/915}
+.hz-arch::before,.hz-arch::after{border-radius:50% 50% 16px 16px / 24% 24% 16px 16px}
+.hz-photo{border-radius:50% 50% 12px 12px / 22% 22% 12px 12px}
+.hz-photo i{background-size:cover;background-position:50% 40%;transform-origin:50% 35%}
+#hero .hz-cnt{margin-top:34px}
   </style>
 </head>
 <body>
@@ -2478,7 +2485,7 @@ section#sobres{
     <b class="hz-gem l">✦</b><b class="hz-gem r">✦</b>
   </div>
   <div class="hz-arch" id="heroBg" role="img" aria-label="Nubia Brisia y Luis Ricardo">
-    <div class="hz-photo"><i style="background-image:url('fotos/foto2.jpg')"></i><b class="hz-sheen"></b></div>
+    <div class="hz-photo"><i style="background-image:url('fotos/hero-selfie.jpg')"></i><b class="hz-sheen"></b></div>
   </div>
   <div class="h-cnt hz-cnt" id="hCnt">
     <div class="h-clip"><span class="h-name hz-name" id="hN1">Nubia Brisia</span></div>
